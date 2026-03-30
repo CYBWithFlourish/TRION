@@ -156,7 +156,7 @@ TRION/
     │       └── Published.toml # Testnet deployment info
     │
     ├── docs/
-    │   ├── utopia_onboarding.md      # EVE Frontier Utopia setup
+    │   ├── AGENTS.md
     │   └── ...
     │
     ├── supabase/
