@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { OrderbookPage } from '../components/OrderbookPage';
+---
+
+<Layout title="Marketplace">
+	<div class="hero">
+		<h1 class="glow-text-blue">The Global Ledger</h1>
+		<p class="text-muted">Direct Smart Storage Unit exchange across the Frontier.</p>
+	</div>
+
+	<OrderbookPage client:only="react" />
+
+	<style>
+		.hero {
+			text-align: center;
+			margin-bottom: 4rem;
+			padding: 4rem 0;
+			background: radial-gradient(circle at 50% 50%, rgba(0, 240, 255, 0.05), transparent 70%);
+		}
+		h1 {
+			font-family: 'Orbitron', sans-serif;
+			font-size: 3.5rem;
+			font-weight: 800;
+			letter-spacing: -1px;
+			margin-bottom: 1rem;
+		}
+	</style>
+</Layout>

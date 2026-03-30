@@ -1,0 +1,183 @@
+/* Orderbook Styles */
+.orderbook-container { margin-top: 2rem; }
+.orderbook-header { margin-bottom: 2rem; }
+.listings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.5rem;
+}
+.listing-card { padding: 1.5rem; transition: transform 0.3s; }
+.listing-card:hover { transform: translateY(-5px); border-color: var(--neon-blue); }
+.card-top { display: flex; justify-content: space-between; margin-bottom: 1.5rem; }
+.wallet-tag { font-family: monospace; font-size: 0.8rem; color: var(--text-muted); }
+.status-tag {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.05);
+}
+.status-tag.open { color: var(--neon-blue); border: 1px solid var(--neon-blue-glow); }
+
+.swap-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+.asset-side { display: flex; flex-direction: column; }
+.label { font-size: 0.7rem; color: var(--text-muted); margin-bottom: 0.2rem; letter-spacing: 1px; }
+.qty { font-size: 1.4rem; font-weight: 800; font-family: 'Orbitron', sans-serif; }
+.qty.text-green { color: var(--neon-green); }
+.name { font-size: 0.9rem; font-weight: 500; }
+.swap-arrow { font-size: 1.5rem; color: var(--border-color); }
+.text-right { text-align: right; }
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+.score { font-size: 0.8rem; color: var(--text-muted); }
+.btn-sm { padding: 0.4rem 1rem; font-size: 0.7rem; }
+.listing-status-msg {
+  margin-top: 0.75rem;
+  min-height: 1.2rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+.loading-state {
+  text-align: center;
+  padding: 4rem;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 2px;
+  animation: pulse 1.5s infinite;
+}
+
+/* Form Styles */
+.form-container { padding: 2.5rem; max-width: 500px; margin: 0 auto; }
+.form-section { margin-bottom: 1.5rem; }
+.input-group { display: flex; gap: 0.5rem; }
+select, input { 
+    background: rgba(255,255,255,0.05); 
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 0.8rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100%;
+}
+select { flex: 2; }
+input { flex: 1; }
+.swap-divider { 
+    text-align: center; 
+    margin: 1.5rem 0; 
+    font-family: 'Orbitron', sans-serif;
+    color: var(--border-color);
+    position: relative;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+}
+.swap-divider::before, .swap-divider::after {
+    content: ''; position: absolute; top: 50%; width: 35%; height: 1px; background: var(--border-color);
+}
+.swap-divider::before { left: 0; }
+.swap-divider::after { right: 0; }
+.status-msg { margin: 1rem 0; font-size: 0.85rem; text-align: center; font-weight: 600; min-height: 1.2rem; }
+.inline-hint {
+  margin-top: 0.4rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+.inline-error {
+  margin-top: 0.4rem;
+  font-size: 0.75rem;
+  color: #ff7f7f;
+}
+.item-meta-card {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 0.65rem;
+  background: rgba(255, 255, 255, 0.03);
+  margin-bottom: 0.75rem;
+}
+.item-meta-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid var(--border-color);
+}
+.item-meta-icon-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.62rem;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+}
+.item-meta-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.item-meta-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.item-meta-subtitle {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+/* Dashboard Styles */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+.dashboard-stat {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.dashboard-stat .value {
+    font-size: 2rem;
+    font-weight: 800;
+    font-family: 'Orbitron', sans-serif;
+}
+.placeholder-section {
+    padding: 4rem;
+    text-align: center;
+}
+.activity-list {
+  margin-top: 1.25rem;
+  display: grid;
+  gap: 0.65rem;
+}
+.activity-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.65rem 0.85rem;
+  background: rgba(255, 255, 255, 0.03);
+  font-size: 0.85rem;
+}

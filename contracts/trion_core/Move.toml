@@ -1,0 +1,24 @@
+[package]
+name = "trion_core"
+edition = "2024"         # edition = "legacy" to use legacy (pre-2024) Move
+# license = ""           # e.g., "MIT", "GPL", "Apache 2.0"
+# authors = ["..."]      # e.g., ["Joe Smith (joesmith@noemail.com)", "John Snow (johnsnow@noemail.com)"]
+
+
+[dependencies]
+# Git dependency provides the source code for compilation
+world = { git = "https://github.com/evefrontier/world-contracts.git", subdir = "contracts/world", rev = "main" }
+
+# Tell the system which on-chain address to link against on Testnet
+[dep-replacements.testnet.world]
+published-at = "0x07e6b810c2dff6df56ea7fbad9ff32f4d84cbee53e496267515887b712924bd1"
+original-id = "0xd12a70c74c1e759445d6f209b01d43d860e97fcf2ef72ccbbd00afd828043f75"
+use-environment = "testnet_utopia"
+
+[environments]
+testnet_internal = "4c78adac"
+testnet_utopia = "4c78adac"
+testnet_stillness = "4c78adac"
+
+# Read more about the package management system options:
+# https://docs.sui.io/guides/developer/sui-101/move-package-management

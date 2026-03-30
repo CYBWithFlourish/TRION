@@ -1,0 +1,129 @@
+---
+import '../styles/theme.css';
+import '../styles/components.css';
+import { NavWalletWrapper } from '../components/GlobalWrapper';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="TRION - Decentralized Trade Protocol for EVE Frontier" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title} | TRION</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;600;700;800&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<div class="stars-overlay"></div>
+		<nav class="glass-panel main-nav">
+			<div class="nav-container">
+				<a href="/" class="logo glow-text-blue">TRION<span style="color: #fff; font-size: 0.8rem; margin-left: 0.5rem; opacity: 0.6;">Protocol</span></a>
+				<div class="nav-links">
+					<a href="/">Orderbook</a>
+					<a href="/list">New Intent</a>
+					<a href="/dashboard">Dashboard</a>
+				</div>
+				<div id="wallet-btn-container">
+					<NavWalletWrapper client:only="react" />
+				</div>
+			</div>
+		</nav>
+
+		<main class="container">
+			<slot />
+		</main>
+
+		<footer class="container">
+			<div class="footer-content">
+				<p>© 2026 TRION PROTOCOL — SECURE SMART STORAGE UNIT SWAPS</p>
+				<p class="text-muted">CONNECTED TO EVE UTOPIA NETWORK</p>
+			</div>
+		</footer>
+
+		<style is:global>
+			.stars-overlay {
+				position: fixed;
+				inset: 0;
+				background-image: 
+					radial-gradient(1.5px 1.5px at 20px 30px, #fff, rgba(0,0,0,0)),
+					radial-gradient(1.5px 1.5px at 100px 100px, #fff, rgba(0,0,0,0)),
+					radial-gradient(1.5px 1.5px at 150px 50px, #fff, rgba(0,0,0,0)),
+					radial-gradient(1.5px 1.5px at 200px 150px, #fff, rgba(0,0,0,0));
+				background-repeat: repeat;
+				background-size: 250px 250px;
+				opacity: 0.1;
+				z-index: -1;
+				pointer-events: none;
+			}
+
+			.main-nav {
+				position: sticky;
+				top: 1rem;
+				z-index: 100;
+				margin: 1rem auto;
+				max-width: 1200px;
+				width: calc(100% - 2rem);
+				padding: 0.8rem 1.5rem;
+				border-radius: 50px;
+			}
+
+			.nav-container {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+			.logo {
+				font-family: 'Orbitron', sans-serif;
+				font-weight: 800;
+				font-size: 1.4rem;
+				text-decoration: none;
+				letter-spacing: 2px;
+			}
+
+			.nav-links {
+				display: flex;
+				gap: 2rem;
+			}
+
+			.nav-links a {
+				color: var(--text-main);
+				text-decoration: none;
+				font-size: 0.9rem;
+				font-weight: 500;
+				transition: color 0.3s;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+			}
+
+			.nav-links a:hover {
+				color: var(--neon-blue);
+			}
+
+			.container {
+				max-width: 1200px;
+				margin: 3rem auto;
+				padding: 0 1rem;
+			}
+
+			.footer-content {
+				margin-top: 6rem;
+				padding: 3rem 0;
+				border-top: 1px solid var(--border-color);
+				text-align: center;
+				font-size: 0.8rem;
+				letter-spacing: 1px;
+			}
+		</style>
+	</body>
+</html>

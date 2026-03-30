@@ -1,0 +1,60 @@
+# Node / package managers
+node_modules/
+**/node_modules/
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+.env.local
+.env.development
+.env.production
+
+# Build outputs
+dist/
+build/
+.out/
+.astro/
+public/dist/
+
+# Sui & Move artifacts
+.sui/
+packages/
+move_build/
+*.mvb
+Pub.*.toml
+
+# Editor / OS
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+Thumbs.db
+.DS_Store
+
+# Keys / certs
+*.pem
+*.key
+*.p12
+*.jks
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# Container / CI
+docker-compose.override.yml
+.envrc
+
+# Misc
+coverage/
+.cache/
+*.tgz
