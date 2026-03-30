@@ -1,5 +1,9 @@
 # TRION - Decentralized Item Trading Protocol on Sui
 
+<p align="center">
+  <img src="assets/trion_w.png" alt="TRION" width="360" />
+</p>
+
 **TRION** is a protocol for peer-to-peer item trading in web3 games and metaverses built on the [Sui blockchain](https://sui.io). It enables players to discover match partners, negotiate trade terms, and execute trustless settlements directly from their wallets—all without relying on centralized intermediaries.
 
 > Built on [EVE Frontier](https://evefrontier.com), utilizing Sui's Smart Objects and efficient state management.
