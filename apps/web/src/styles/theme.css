@@ -1,21 +1,30 @@
 :root {
+  /* Palette derived from assets/trion_w.png (neon cyan / purple / green) */
+  --color-primary: #00f0ff; /* brand cyan */
+  --color-primary-glow: rgba(0, 240, 255, 0.35);
+  --color-accent: #bc13fe; /* neon purple */
+  --color-accent-glow: rgba(188, 19, 254, 0.25);
+  --color-highlight: #00ff73; /* neon green */
+  --color-highlight-glow: rgba(0, 255, 115, 0.25);
+
   --bg-deep: #050505;
   --bg-panel: rgba(15, 15, 20, 0.7);
   --bg-surface: #0a0a0f;
-  
-  --neon-blue: #00f0ff;
-  --neon-blue-glow: rgba(0, 240, 255, 0.4);
-  --neon-green: #00ff73;
-  --neon-green-glow: rgba(0, 255, 115, 0.4);
-  --neon-purple: #bc13fe;
-  
-  --text-main: #e0e0e0;
-  --text-muted: #888888;
+
+  /* Map existing theme tokens to the new palette for compatibility */
+  --neon-blue: var(--color-primary);
+  --neon-blue-glow: var(--color-primary-glow);
+  --neon-green: var(--color-highlight);
+  --neon-green-glow: var(--color-highlight-glow);
+  --neon-purple: var(--color-accent);
+
+  --text-main: #e6f9fb; /* slightly cyan-tinted text for brand cohesion */
+  --text-muted: #9fbfc2;
   --text-bright: #ffffff;
-  
-  --border-color: rgba(255, 255, 255, 0.1);
-  --border-glow: rgba(0, 240, 255, 0.2);
-  
+
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-glow: rgba(0, 240, 255, 0.18);
+
   --font-main: 'Inter', system-ui, sans-serif;
   --font-accent: 'Orbitron', sans-serif;
 }

@@ -10,7 +10,8 @@ const TRION_NETWORK_CONFIG = networkConfig as Record<TrionNetwork, { url: string
 export const trionDAppKit = createDAppKit({
   networks: TRION_NETWORKS,
   defaultNetwork: DEFAULT_SUI_NETWORK,
-  autoConnect: false,
+  // enable autoConnect so DAppKit restores the previously selected wallet on page reload
+  autoConnect: true,
   createClient: (network) => {
     const selectedNetwork = (network in TRION_NETWORK_CONFIG
       ? network
