@@ -31,7 +31,7 @@ deps = { MoveStdlib = "MoveStdlib" }
 [pinned.testnet.trion_core]
 source = { root = true }
 use_environment = "testnet"
-manifest_digest = "2B1FB27E37829206833DB8528EE560AE176EDE6902F7E273452B7AAE19185FFB"
+manifest_digest = "B39C0C9C9F18AEDA29DB7B9A35E8E4B3A4265B5C7E90067129FE93DC2B393E4A"
 deps = { std = "MoveStdlib", sui = "Sui", world = "world" }
 
 [pinned.testnet.world]

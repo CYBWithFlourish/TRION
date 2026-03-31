@@ -7,13 +7,10 @@ edition = "2024"         # edition = "legacy" to use legacy (pre-2024) Move
 
 [dependencies]
 # Git dependency provides the source code for compilation
-world = { git = "https://github.com/evefrontier/world-contracts.git", subdir = "contracts/world", rev = "main" }
+world = { git = "https://github.com/evefrontier/world-contracts.git", subdir = "contracts/world", rev = "v0.0.21" }
 
 # Tell the system which on-chain address to link against on Testnet
 [dep-replacements.testnet.world]
-git = "https://github.com/evefrontier/world-contracts.git"
-subdir = "contracts/world"
-rev = "main"
 published-at = "0x07e6b810c2dff6df56ea7fbad9ff32f4d84cbee53e496267515887b712924bd1"
 original-id = "0xd12a70c74c1e759445d6f209b01d43d860e97fcf2ef72ccbbd00afd828043f75"
 use-environment = "testnet_utopia"
